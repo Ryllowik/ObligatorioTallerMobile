@@ -1,0 +1,48 @@
+.list {
+    background: none;
+    border: none;
+}
+
+.list-item {
+    border: 1px solid #ccc!important;
+    padding-left: 0;
+    margin-bottom: 10px;
+    background: white;
+    border-radius: 5px;
+}
+
+.list-item__thumbnail {
+    width: 80px;
+    height: 80px;
+}
+
+.list-item__subtitle ons-button{
+    font-size: 14px;
+    padding: 0px 0px 0px 6px;
+}
+
+.list-item__left {
+    padding: 12px 14px 12px 14px;
+    background: lightgray;
+}
+
+.list-item__center {
+    padding: 12px 6px 12px 6px;
+}
+
+.list-item--material__left {
+    min-width: auto;
+}
+
+.favIcon {
+    color: grey;
+    transition-duration: 0.5s;
+}
+.favIcon.active{
+    color: red
+}
+
+#mapContainer {
+    height: 400px;
+    margin-top: 20px;
+  }

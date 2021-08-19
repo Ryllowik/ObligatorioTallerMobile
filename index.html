@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/onsenui.css" />
+    <link rel="stylesheet" href="css/onsen-css-components.min.css" />
+    <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <script src="js/onsenui.min.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/custom.js"></script>
+  </head>
+  <body>
+    <ons-navigator swipeable id="myNavigator" page="login.html"></ons-navigator>
+    <template id="registro.html">
+      <ons-page id="registro">
+        <div style="text-align: center; margin-top: 30px">
+          <p>
+            <ons-input id="regEmail" modifier="underbar" type="email" placeholder="Username" float required></ons-input>
+          </p>
+          <p>
+            <ons-input id="regPassword" modifier="underbar" type="password" placeholder="Password" float required></ons-input>
+          </p>
+          <p>
+            <ons-input id="regNombre" modifier="underbar" type="text" placeholder="Nombre" float required></ons-input>
+          </p>
+          <p>
+            <ons-input id="regApellido" modifier="underbar" type="text" placeholder="Apellido" float required></ons-input>
+          </p>
+          <p>
+            <ons-input id="regDireccion" modifier="underbar" type="text" placeholder="Direccion" float required></ons-input>
+          </p>
+          <p style="margin-top: 30px">
+            <ons-button onclick="registrar()">Registrarse</ons-button>
+          </p>
+          <ons-button modifier="quiet" onclick="navegarBack()">Ya tienes usuario? Loguéate!</ons-button>
+        </div>
+      </ons-page>
+    </template>
+
+    <template id="login.html">
+      <ons-page id="login">
+        <div style="text-align: center; margin-top: 30px">
+          <p>
+            <ons-input id="LogEmail" modifier="underbar" value="fw@ort.com" placeholder="Email" float></ons-input>
+          </p>
+          <p>
+            <ons-input id="LogPassword" modifier="underbar" value="12345678" type="password" placeholder="Password" float></ons-input>
+          </p>
+          <p style="margin-top: 30px">
+            <ons-button onclick="login()">Entrar</ons-button>
+          </p>
+          <ons-button modifier="quiet" onclick="navegar('registro')">No tienes usuario? Regístrate!</ons-button>
+        </div>
+      </ons-page>
+    </template>
+
+
+    <template id="inicio.html">
+      <ons-page id="inicio">
+        <ons-toolbar>
+          <div class="center">App MercadoLibre</div>
+          <div class="right">
+            <ons-toolbar-button onclick="cerrarSesion()">
+              Cerrar Sesion
+            </ons-toolbar-button>
+          </div>
+        </ons-toolbar>
+        </div>
+        
+        <ons-tabbar swipeable position="auto">
+          <ons-tab page="catalogo.html" label="Catalogo" icon="fa-tag"> </ons-tab>
+          <ons-tab page="favoritos.html" label="Favoritos" icon="fa-heart"> </ons-tab>
+          <ons-tab page="pedidos.html" label="Pedidos" icon="fa-shopping-cart"> </ons-tab>
+        </ons-tabbar>
+      </ons-page>
+    </template>
+
+    <template id="catalogo.html">
+      <ons-page id="catalogo">
+        <div style="text-align: center; margin-top: 30px">
+          <p>
+            <ons-input id="txtBusqueda" modifier="underbar" placeholder="Texto a buscar..." float></ons-input>
+          </p>
+          <p style="margin-top: 10px">
+            <ons-button onclick="buscar('')">Buscar</ons-button>
+          </p>
+        </div>
+        <ons-list modifier="inset" id="listCatalogo"> </ons-list>
+        <div style="text-align: center; margin-top: 10px">
+          <ons-button id="btnVerMas" onclick="verMas()" style="display: none">Ver más</ons-button>
+        </div>
+    </template>
+
+    <template id="favoritos.html">
+      <ons-page id="favoritos">
+
+      </ons-page>
+    </template>
+
+    <template id="pedidos.html">
+      <ons-page id="pedidos">
+        
+      </ons-page>
+    </template>
+
+    <template id="detalle.html">
+      <ons-page id="detalle">
+        <ons-toolbar>
+          <div class="left">
+            <ons-back-button>Volver</ons-back-button>
+          </div>
+          <div class="center">App MercadoLibre</div>
+          <div class="right">
+            <ons-toolbar-button onclick="cerrarSesion()">
+              Cerrar Sesion
+            </ons-toolbar-button>
+          </div>
+        </ons-toolbar>
+        <ons-card id="cardProducto">
+          
+        </ons-card>
+      </ons-page>
+    </template>
+
+    <template id="comprar.html">
+      <ons-page id="comprar">
+        <ons-toolbar>
+          <div class="left">
+            <ons-back-button>Volver</ons-back-button>
+          </div>
+          <div class="center">App MercadoLibre</div>
+          <div class="right">
+            <ons-toolbar-button onclick="cerrarSesion()">
+              Cerrar Sesion
+            </ons-toolbar-button>
+          </div>
+        </ons-toolbar>
+        <div id="pedidoForm" style="text-align: center; margin-top: 30px;">
+          
+        </div>
+      </ons-page>
+    </template>
+  </body>
+</html>
